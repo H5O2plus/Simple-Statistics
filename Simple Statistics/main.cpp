@@ -9,12 +9,53 @@
 #include "lqueue.h"
 
 #include <iostream>
-
+#include <vector>
+#include <set>
 //template <typename E>
 //DLink<E>* DLink<E>::freelist = NULL;  // The freelist head pointer is actually created here
 
 int main(int argc, char* argv[])
 {
+
+    /*std::set<int> se = {2,2,2,2,2,2,2};
+    se.erase(2);
+
+    for(int s: se)
+        std::cout << s;*/
+    Random_data<int> test;
+    std::vector<int> v1 = test.get_random_vector(10, 1, 5);
+    std::set<int> v2;
+
+    for(int v: v1)
+        std::cout << v << ' ';
+    std::cout << std::endl;
+
+    for(int v: v1)
+        v2.insert(v);
+
+    for(int v: v2)
+        std::cout << v << ' ';
+    std::cout << std::endl;
+
+
+    LList<int> i_linked_list;
+    for(int v: v1)
+        i_linked_list.append(v);
+
+    std::cout << "Mode is ";
+    for(int m: i_linked_list.get_mode())
+        std::cout << m << " ";
+    std::cout << std::endl;
+    std::cout << "Median is " << i_linked_list.get_median() << std::endl;
+    std::cout << "Mean is " << i_linked_list.get_mean() << std::endl;
+    std::cout << "SD is " << i_linked_list.get_SD() << std::endl;
+    std::cout << "Min is " << i_linked_list.get_min() << std::endl;
+    std::cout << "Max is " << i_linked_list.get_max() << std::endl;
+	
+	
+	
+	
+	
 	std::cout << "All is good" << "\n";
 
 	AList<int> int_array_list(20);
