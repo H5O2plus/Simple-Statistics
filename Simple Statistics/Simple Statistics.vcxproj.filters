@@ -57,7 +57,7 @@
     <ClInclude Include="utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="simple_stat.hpp">
+    <ClInclude Include="randomdata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

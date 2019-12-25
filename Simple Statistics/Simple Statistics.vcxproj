@@ -135,7 +135,7 @@
     <ClInclude Include="lqueue.h" />
     <ClInclude Include="lstack.h" />
     <ClInclude Include="queue.h" />
-    <ClInclude Include="simple_stat.hpp" />
+    <ClInclude Include="randomdata.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>

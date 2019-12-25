@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <iterator>
 
 // Linked list implementation
 template <typename E> class LList : public List<E> {
@@ -78,6 +79,11 @@ public:
 	LList(int size = 10) {
 		init(); // Constructor replace defaultSize (now 10) with the default you want otherwise leave empty
 	}
+	template<class container>
+	LList(container in) {
+		init();
+		feed(in);
+	}
 	~LList() { // Be very careful when you copy from pdf the tilde will not get copied properly so be sure to replace with actual
 		removeall(); // Destructor
 	}
@@ -117,6 +123,14 @@ public:
 	void empty() {
 		removeall();
 		init(); // Clear list
+	}
+
+	// 4. feed: insert multiple data in one container
+	template<class container>
+	feed(container in) {
+		for (auto it = std::begin(in); it != std::end(in); it++) {
+			append(*it);
+		}
 	}
 
 	// 5. search (fastest possible among the choices what we have  discussed in the class):
