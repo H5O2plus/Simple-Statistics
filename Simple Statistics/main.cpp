@@ -7,6 +7,7 @@
 #include "lstack.h"
 #include "aqueue.h"
 #include "lqueue.h"
+#include "randomdata.h"
 
 #include <iostream>
 #include <vector>
