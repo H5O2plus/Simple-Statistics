@@ -11,7 +11,6 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include <math.h>
 
 // Linked list implementation
 template <typename E> class LList : public List<E> {
@@ -70,7 +69,8 @@ private:
 	void pre_SD_sum() {
 		pre_SD = 0;
 		for (E v : total) {
-			pre_SD += pow(v - this->get_mean(), 2.0);
+			auto tmp = v - this->get_mean();
+			pre_SD += tmp * tmp;
 		}
 	}
 
