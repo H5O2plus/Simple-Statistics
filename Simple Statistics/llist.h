@@ -101,7 +101,7 @@ public:
 	}
 
 	//2, Remove and return current element
-	E remove() {
+	E remove() { //this is meant to be removen
 		//Assert(curr->next != NULL, "No element");
 		E it = curr->next->element; // Remember value
 		Link<E>* ltemp = curr->next; // Remember link node
@@ -125,9 +125,15 @@ public:
 		init(); // Clear list
 	}
 
+	void clear() { //llist must have a clear(), as it is inheriting from list.h and all virtual =0 i.e. abstract functions inherited 
+					//from list.h must be overriden. Otherwise, llist counts as an abstract class as it possesses abstract functions, 
+					//and thus is illegal to instantiate.
+		empty();
+	}
+
 	// 4. feed: insert multiple data in one container
 	template<class container>
-	feed(container in) {
+	void feed(container in) {
 		for (auto it = std::begin(in); it != std::end(in); it++) {
 			append(*it);
 		}
@@ -167,6 +173,11 @@ public:
 	int length_total() const {
 		return cnt;
 	}
+	int length() const {//llist must have a clear(), as it is inheriting from list.h and all virtual =0 i.e. abstract functions inherited 
+						//from list.h must be overriden. Otherwise, llist counts as an abstract class as it possesses abstract functions, 
+						//and thus is illegal to instantiate.
+		return cnt;
+	}
 	//9. unique: return all the unique elements as an std::set
 	std::set<E> unique_set() const {
 		return unique;
@@ -182,7 +193,7 @@ public:
 	// 10.2 get_median: returns the median value of the current entire data set
 	double get_median() {
 		if (cnt % 2 == 0)
-			return (total[cnt / 2] + total[cnt / 2 - 1]) / 2.0;
+			return (double)(total[cnt / 2] + total[cnt / 2 - 1]) / 2.0;
 		return total[cnt / 2];
 	}
 	// 10.3 get_ mean: returns the mean value of the current entire data set

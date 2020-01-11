@@ -41,8 +41,11 @@ private:
 
 
 	//10.1	get_mode: returns the mode value of the current entire data set
-	std::vector<pair<T>> modes;
-	std::vector<T> mode;
+
+	//mode must be a vector of Ts, not a singular T, because mathematic standards dictate that there can be multiple modes tying for highest recurrence rate.
+	std::vector<pair<T>> modes;//The vector of pairs, modes, is for computational convenience.
+	std::vector<T> mode; //calc_mode returns mode
+
 	void calc_mode(bool updatingonly = false) {//false by default //if appending only one, put before sorting and set updatingonly to true. calc_mode is expensive if done again and again after each one, so if possible, when appending in bulk set updatingonly to false and after all has been appended;indifferent to whether in front or after sort.
 		int n;
 		if (updatingonly == false) {

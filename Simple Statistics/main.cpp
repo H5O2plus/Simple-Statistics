@@ -9,6 +9,7 @@
 #include <forward_list>
 #include <list>
 
+#include "llist.h"
 #include "simple_stats.h"
 #include "randomdata.h"
 #include "pair.h"
@@ -55,7 +56,7 @@ int main(int argc, char* argv[]) {
 
 	simple_stats<int> test0;
 	//Empty constructor:
-	std::cout << "\nPrinting all elements in empty class:";
+	std::cout << "\nPrinting all elements in EMPTIED class:";
 	test0.printallelements();
 	std::cout << "printing finished" << std::endl;
 
